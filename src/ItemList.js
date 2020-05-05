@@ -12,7 +12,7 @@ function ItemList() {
 
   function addItem(productId) {
     for (let item in products) {
-      if (Object.keys(item)[0] === productId) {
+      if (item === productId) {
         dispatch(addToCart({...item, cartId: uuid()}));
       }
     }
@@ -20,10 +20,6 @@ function ItemList() {
 
   function deleteItem(cartId) {
     dispatch(deleteFromCart(cartId));
-  }
-
-  for(let item in products){
-    console.log('in for loop',typeof item)
   }
 
   function renderItems() {
