@@ -10,6 +10,7 @@ function ItemList() {
     console.log('this is products', products);
   const dispatch = useDispatch();
 
+  //change this foor loop to work with the new products array in state
   function addItem(productId) {
     for (let item in products) {
       if (item === productId) {
