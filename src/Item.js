@@ -1,8 +1,8 @@
 import React from 'react';
+import './Item.css'
 
 function Item({
   productId, 
-  cartId, 
   name, 
   price, 
   description, 
@@ -11,13 +11,17 @@ function Item({
   deleteItem}){
 
     return(
-      <div>
-        <img src={image_url} alt="item-image"/>
-        <p>{name}</p>
-        <p>{price}</p>
-        <p>{description}</p>
-        <button onClick={() => addItem(productId)}>Add to Cart</button>
-        <button onClick={() => deleteItem(cartId)}>Delete from Cart</button>
+      <div className="productContainer">
+        <div className="productImageContainer">
+          <img src={image_url} alt="item-image" className="productImage"/>
+        </div>
+        <div className="productDetailsContainer">
+          <h2>{name}</h2>
+          <p>${price}</p>
+          <p>{description}</p>
+          <button className="btn btnAdd" onClick={() => addItem(productId)}>Add to Cart</button>
+          <button className="btn btnDelete" onClick={() => deleteItem(productId)}>Delete from Cart</button>
+        </div>
       </div>
     )
 }

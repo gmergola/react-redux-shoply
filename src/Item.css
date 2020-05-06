@@ -1,0 +1,41 @@
+.productContainer {
+  width: 400px;
+  border: 1px solid gray;
+  border-radius: 6px;
+  display: flex;
+  padding: 10px 20px;
+  margin: 5px auto;
+
+}
+
+.productImageContainer {
+  margin: auto 20px auto 0;
+}
+
+.productDetailsContainer {
+  
+  text-align: left;
+}
+
+.productImage {
+  height: 80px;
+  width: 80px;
+}
+
+.btn {
+  height: 28px;
+  padding: 0 20px;
+  border: none;
+  border-radius: 3px;
+  background-color: gray;
+  color: white;
+  margin: 10px;
+}
+
+.btnAdd {
+  background-color: green;
+}
+
+.btnDelete {
+  background-color: red;
+}

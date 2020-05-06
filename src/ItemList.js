@@ -1,26 +1,21 @@
 import React from 'react';
-import { useSelector, shallowEqual, useDispatch } from "react-redux";
+import { useDispatch } from "react-redux";
 import { addToCart, deleteFromCart } from "./actions";
-import uuid from 'uuid';
 import Item from './Item';
+import './ItemList.css'
 
-function ItemList() {
-  const { products } = useSelector(st =>
-    ({ products: st.products }), shallowEqual);
-    console.log('this is products', products);
+// renders the list of products
+function ItemList({ products }) {
   const dispatch = useDispatch();
 
-  //change this foor loop to work with the new products array in state
+  // adding a product to the user's shopping cart
   function addItem(productId) {
-    for (let item in products) {
-      if (item === productId) {
-        dispatch(addToCart({...item, cartId: uuid()}));
-      }
-    }
+    dispatch(addToCart(productId));
   }
 
-  function deleteItem(cartId) {
-    dispatch(deleteFromCart(cartId));
+  // removing a product from the user's shopping cart
+  function deleteItem(productId) {
+    dispatch(deleteFromCart(productId));
   }
 
   function renderItems() {
@@ -39,7 +34,7 @@ function ItemList() {
   }
 
   return (
-    <div>
+    <div className="productListContainer">
       {renderItems()}
     </div>
   )

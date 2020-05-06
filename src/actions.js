@@ -1,15 +1,23 @@
-import { ADD_TO_CART, DELETE_FROM_CART } from "./actionTypes";
+import { ADD_TO_CART, DELETE_FROM_CART, REFRESH_CART_COUNTS } from "./actionTypes";
 
-export function addToCart(item) {
+export function addToCart(productId) {
   return {
     type: ADD_TO_CART,
-    item
+    productId
   };
 }
 
-export function deleteFromCart(id) {
+export function deleteFromCart(productId) {
   return {
     type: DELETE_FROM_CART,
-    id
+    productId
   };
+}
+
+export function refreshCartCount(priceCount, itemCount) {
+  return {
+    type: REFRESH_CART_COUNTS,
+    priceCount,
+    itemCount
+   };
 }
